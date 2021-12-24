@@ -72,7 +72,7 @@ function createScene() {
 		this.quaternionW = 0;
 	  }
 
-	addControls(control);
+	//addControls(control);
 
 	function addControls(controlObj){
 		var gui = new dat.GUI();
@@ -91,8 +91,8 @@ function createScene() {
 
 		//deg2rad(value)
 	}
-	const helper = new THREE.CameraHelper( cam );	
-	scene.add( helper );
+	// const helper = new THREE.CameraHelper( cam );	
+	// scene.add( helper );
 
 
 	// const tmpVec3 = new Vector3();
@@ -571,16 +571,16 @@ var AirPlane = function() {
 	suspension.rotation.z = -.3;
 	this.mesh.add(suspension);
 	
-	var planeGeometry = new THREE.PlaneGeometry(256, 160);
+	var planeGeometry = new THREE.PlaneGeometry(320, 200);
 	var planeMaterial = new THREE.MeshBasicMaterial({side: THREE.DoubleSide})
 	var paper = new THREE.Mesh(planeGeometry, planeMaterial);
-	paper.position.set(-180,0,0)
+	paper.position.set(-200,0,0)
 	this.mesh.add(paper)
 	
 
 	// const self = this;
 	const loader = new THREE.TextureLoader();
-	loader.load( `sv.jpg`, function ( texture ) {
+	loader.load( `sv.png`, function ( texture ) {
 
 			// in this example we create the material when the texture is loaded
 			// const img = texture.image;
@@ -929,7 +929,7 @@ function init(event) {
 	createLand();
 	createForest();
 	createSky();
-	createFox();
+	//createFox();
 	createPaper();
 
 	document.addEventListener('mousemove', handleMouseMove, false);
