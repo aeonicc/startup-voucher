@@ -54,7 +54,7 @@ function createScene() {
 	);
 
 	control = new function(){
-		this.positionZ = 50;
+		this.positionZ = -50;
 		this.positionX = 0;
 		this.positionY = 100;
 
@@ -830,7 +830,7 @@ function createPaper(){
 function updatePlane() {
 
 	var targetY = normalize(mousePos.y,-.75,.75, 50, 190);
-	var targetX = normalize(mousePos.x,-.75,.75,-100, -20);
+	var targetX = normalize(mousePos.x,-.75,.75,-50, 100);
 	
 	// Move the plane at each frame by adding a fraction of the remaining distance
 	airplane.mesh.position.y += (targetY-airplane.mesh.position.y)*0.1;
